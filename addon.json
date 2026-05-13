@@ -1,0 +1,7 @@
+{
+  "uuid": "%uuid%",
+  "name": "ZakoHealthIndicator",
+  "mainClass": "hw.zako.zakohealthindicator.ZakoHealthIndicator",
+  "version": 1,
+  "author": "Zako"
+}

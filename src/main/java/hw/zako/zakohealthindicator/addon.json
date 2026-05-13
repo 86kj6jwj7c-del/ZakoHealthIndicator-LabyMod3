@@ -1,6 +1,0 @@
-{
-  "uuid": "%uuid%",
-  "name": "ZakoHealthIndicator",
-  "mainClass": "hw.zako.zakohealthindicator",
-  "transformerClass": "net.labymod.addons.test.TestTransformer"
-}

@@ -1,16 +1,35 @@
 package hw.zako.zakohealthindicator;
 
 
+import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.command.v1.ClientCommandManager;
+import net.labymod.api.LabyModAddon;
 import net.minecraft.text.LiteralText;
 import net.minecraft.util.Formatting;
 import net.labymod.api.LabyModAPI;
 
-public class ZakoHealthIndicator implements ModInitializer {
+public class ZakoHealthIndicator extends LabyModAddon {
 
-    public static void init() {
-        System.out.println(LabyModAPI.getName());
+    public class ExampleMod extends LabyModAddon {
+
+        @Override
+        public void onInitializeClient() {
+
+            if (isLabyModLoaded()) {
+                System.out.println("LabyMod detected");
+            }
+        }
+
+        private boolean isLabyModLoaded() {
+            try {
+                Class<?> clazz = Class.forName("net.labymod.main.LabyMod");
+                System.out.println(clazz.getName());
+                return true;
+            } catch (Exception e) {
+                return false;
+            }
+        }
     }
 
 
