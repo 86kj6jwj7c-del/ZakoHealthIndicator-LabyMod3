@@ -5,31 +5,27 @@ import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.client.command.v1.ClientCommandManager;
 import net.labymod.api.LabyModAddon;
+import net.labymod.settings.elements.SettingsElement;
 import net.minecraft.text.LiteralText;
 import net.minecraft.util.Formatting;
 import net.labymod.api.LabyModAPI;
 
+import java.util.List;
+
 public class ZakoHealthIndicator extends LabyModAddon {
 
-    public class ExampleMod extends LabyModAddon {
+    public void onEnable() {
+        System.out.println("Addon loaded");
+    }
 
-        @Override
-        public void onInitializeClient() {
+    @Override
+    public void loadConfig() {
 
-            if (isLabyModLoaded()) {
-                System.out.println("LabyMod detected");
-            }
-        }
+    }
 
-        private boolean isLabyModLoaded() {
-            try {
-                Class<?> clazz = Class.forName("net.labymod.main.LabyMod");
-                System.out.println(clazz.getName());
-                return true;
-            } catch (Exception e) {
-                return false;
-            }
-        }
+    @Override
+    protected void fillSettings(List<SettingsElement> list) {
+
     }
 
 
